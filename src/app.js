@@ -4,7 +4,7 @@ const path=require('path')
 const hbs=require('hbs')
 const geocode=require('./utils/geocode.js')
 const forecast=require('./utils/forecast.js')
-
+const port=process.env.PORT ||3000
 
 const pathDirectory=path.join(__dirname,'../public')
 const viewPath=path.join(__dirname,'../template/views')
@@ -83,6 +83,6 @@ app.get('*',(req,res)=>{
 
 
 
-    app.listen(3000,()=>{
-   console.log("Server on")
+    app.listen(port,()=>{
+   console.log("Server on at"+port)
     } )
